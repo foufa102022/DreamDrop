@@ -20,10 +20,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    dir('dreamdrop') {
+                    
                          bat '.\\mvnw clean install'
                         // bat './mvnw clean install'
-                    }
+                
                 }
             }
         }
@@ -56,10 +56,10 @@ pipeline {
          stage('Run Docker Container') {
             steps {
                 script {
-                      dir('dreamdrop'){
+                      
                       bat "docker-compose down"
                       bat "docker-compose up -d"
-                }}
+                }
             }
         }
     }
