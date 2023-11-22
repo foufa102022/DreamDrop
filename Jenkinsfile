@@ -31,7 +31,7 @@ pipeline {
         stage('Docker Build and Push') {
             steps {
                 script {
-                    dir('dreamdrop') {
+                    
                         // Login to Docker Hub
                         bat "docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}"
                         // Build Docker image
@@ -41,7 +41,7 @@ pipeline {
                         bat "docker tag spring-img:latest chetouiiftikhar/spring-img:%BUILD_ID%"
                         // Push Docker image to Docker Hub
                         // bat "docker push chetouiiftikhar/spring-img:%BUILD_ID%"
-                    }
+                    
                 }
             }
         }
