@@ -30,7 +30,7 @@ services:
       # SPRING_DATASOURCE_URL: jdbc:postgresql://DB-container:5432/postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_DATASOURCE_PASSWORD: 0000
 
 networks:  
   net-projet:
