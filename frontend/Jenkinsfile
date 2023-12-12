@@ -51,7 +51,7 @@ pipeline {
                         // Exécutez la commande terraform init
                             bat "terraform init"
                             bat "terraform apply"
-                       }
+                       }}
             }
         }
 
