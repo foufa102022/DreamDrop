@@ -50,7 +50,7 @@ pipeline {
                           dir('frontend') {
                         // Exécutez la commande terraform init
                             bat "terraform init"
-                            bat "terraform apply"
+                            bat "terraform apply -auto-approve"
                        }}
             }
         }
