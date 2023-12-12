@@ -47,9 +47,10 @@ pipeline {
           stage('Terraform') {
             steps {
                 script {
+                          dir('frontend') {
                         // Exécutez la commande terraform init
-                        bat "terraform init"
-                         bat "terraform apply -auto-approve"
+                            bat "terraform init"
+                            bat "terraform apply"
                        }
             }
         }
