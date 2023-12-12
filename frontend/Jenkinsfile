@@ -5,6 +5,8 @@ pipeline {
         PATH = "${DOCKER_PATH}:${PATH}"
         DOCKERHUB_CREDENTIALS = credentials('DockerHub')
         NODEJS_PATH = "C:\\Program Files (x86)\\nodejs"
+         TERRAFORM_HOME = "E:\\terraform_1.6.4_windows_amd64"
+        PATH = "${TERRAFORM_HOME}:${PATH}"
     }
     stages {
         stage('Install Node.js and npm') {
@@ -42,6 +44,16 @@ pipeline {
                 }
             }
         }
+          stage('Terraform') {
+            steps {
+                script {
+                        // Exécutez la commande terraform init
+                        bat "terraform init"
+                         bat "terraform apply -auto-approve"
+                       }
+            }
+        }
+
     }
 }
 
